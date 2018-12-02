@@ -12,7 +12,7 @@ bot.on("message", async message =>{
     if(message.author.bot ||
       (message.channel.type == "text" && 
        message.channel.name.toLowerCase() != "bragging" && 
-       message.channel.name.toLowerCase() != "botchat")) 
+       message.channel.name.toLowerCase() != "bot")) 
     {
         return;
     }
@@ -31,8 +31,10 @@ bot.on("message", async message =>{
             let cmd2 = messageArray[1];
             return message.channel.send("No siem " + "<@" + cmd2 + ">");
         }
-       
-        return message.channel.send("No siem " + "<@" + message.author.id + ">");
+        else
+        {
+            return message.channel.send("No siem " + "<@" + message.author.id + ">");
+        }
     }
 
     if(cmd === prefix + "botInfo" && message.channel.name.toLowerCase() == "botchat")
