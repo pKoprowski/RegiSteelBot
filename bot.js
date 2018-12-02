@@ -26,15 +26,7 @@ bot.on("message", async message =>{
        cmd === prefix + "Witaj")
 
     {
-        if(messageArray.length == 2)
-        {
-            let cmd2 = messageArray[1];
-            return message.channel.send("No siem " + "<@" + cmd2 + ">");
-        }
-        else
-        {
-            return message.channel.send("No siem " + "<@" + message.author.id + ">");
-        }
+        return message.channel.send("No siem " + "<@" + message.author.id + ">");
     }
 
     if(cmd === prefix + "botInfo" && message.channel.name.toLowerCase() == "botchat")
