@@ -5,14 +5,13 @@ const bot = new discord.Client({disableEveryone: true});
 
 bot.on("ready", async() => {
     console.log(bot.user.username + ' is online!');
-    bot.user.setActivity("wygryw hunting");
+    bot.user.setActivity("Wygryw hunting");
 });
 
 bot.on("message", async message =>{
     if(message.author.bot ||
       (message.channel.type == "text" && 
-       message.channel.name.toLowerCase() != "bragging" && 
-       message.channel.name.toLowerCase() != "bot")) 
+       message.channel.name.toLowerCase() != "bragging")) 
     {
         return;
     }
@@ -25,11 +24,16 @@ bot.on("message", async message =>{
        cmd === prefix + "Cześć"||
        cmd === prefix + "Witaj")
 
-    {
+    {            
         return message.channel.send("No siem " + "<@" + message.author.id + ">");
     }
+    
+    if(cmd === prefix + "Przywitaj się")
+    {            
+        return message.channel.send("Cześć wszystkim \@everyone");
+    }
 
-    if(cmd === prefix + "botInfo" && message.channel.name.toLowerCase() == "botchat")
+    if(cmd === prefix + "botInfo")
     {
             let icon = message.guild.displayAvatarURL;
             let serverembed = new discord.RichEmbed();
