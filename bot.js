@@ -26,12 +26,7 @@ bot.on("message", async message =>{
 
     {            
         return message.channel.send("No siem " + "<@" + message.author.id + ">");
-    }
-    
-    if(cmd === prefix + "Przywitaj")
-    {            
-        return message.channel.send("Cześć wszystkim \@everyone");
-    }
+    }    
 
     if(cmd === prefix + "botInfo")
     {
