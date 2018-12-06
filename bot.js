@@ -45,7 +45,7 @@ bot.on("message", async message =>{
         let przegrywRole = message.guild.roles.find('name', 'przegryw');
         if(!message.member.hasPermission("MANAGE_ROLES")) return console.log("Brak uprawnień");
     
-        if(reaction.count >= 3 && reaction.emoji.name == "🔨")
+        if(reaction.count >= 4 && reaction.emoji.name == "🔨")
         {            
             message.author.send("Gratulacje, Twój aktualny status to wygryw !");
             message.member.addRole(wygrywRole);
