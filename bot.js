@@ -44,7 +44,7 @@ bot.on("message", async message =>{
         let przegrywRole = message.guild.roles.find('name', 'przegryw');
         if(!message.member.hasPermission("MANAGE_ROLES")) return console.log("Brak uprawnień");
     
-        if(reaction.count >= 4 && reaction.emoji.name == "🔨")
+        if(reaction.count >= 1 && reaction.emoji.name == "🔨")
         {            
             console.log('hammer');
             message.author.send("Gratulacje, Twój aktualny status to wygryw !");
@@ -52,7 +52,7 @@ bot.on("message", async message =>{
             message.member.removeRole(przegrywRole);
             
         }
-        else if(reaction.count >= 4 && reaction.emoji.name == "🇫")
+        else if(reaction.count >= 1 && reaction.emoji.name == "🇫")
         {
             console.log('f');
             message.author.send("Przykro mi, ale obecny Twój status to przegryw :(");
