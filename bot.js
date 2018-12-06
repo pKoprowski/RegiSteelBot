@@ -10,8 +10,7 @@ bot.on("ready", async() => {
 
 bot.on("message", async message =>{
     if(message.author.bot ||
-      (message.channel.type == "text" && 
-       message.channel.name.toLowerCase() != "bragging")) 
+       message.channel.name.toLowerCase() != "bragging") 
     {
         return;
     }
