@@ -39,20 +39,22 @@ bot.on("message", async message =>{
     }
 
     message.awaitReactions(reaction => {
-
+        console.log('Reakcja');
         let wygrywRole   = message.guild.roles.find('name', 'wygryw');
         let przegrywRole = message.guild.roles.find('name', 'przegryw');
         if(!message.member.hasPermission("MANAGE_ROLES")) return console.log("Brak uprawnień");
     
         if(reaction.count >= 4 && reaction.emoji.name == "🔨")
         {            
+            console.log('hammer');
             message.author.send("Gratulacje, Twój aktualny status to wygryw !");
             message.member.addRole(wygrywRole);
             message.member.removeRole(przegrywRole);
             
         }
-        else if(reaction.count >= 3 && reaction.emoji.name == "🇫")
+        else if(reaction.count >= 4 && reaction.emoji.name == "🇫")
         {
+            console.log('f');
             message.author.send("Przykro mi, ale obecny Twój status to przegryw :(");
             message.member.addRole(przegrywRole);
             message.member.removeRole(wygrywRole);
